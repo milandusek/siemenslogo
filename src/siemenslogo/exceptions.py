@@ -1,2 +1,0 @@
-class MaxCountException(Exception):
-  pass
