@@ -1,4 +1,4 @@
-from pymodbus.client.sync import ModbusTcpClient as ModbusClient
+from pymodbus.client import ModbusTcpClient as ModbusClient
 from pymodbus.register_read_message import ReadInputRegistersResponse, ReadHoldingRegistersResponse
 
 from .exceptions import MaxCountException
