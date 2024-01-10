@@ -1,4 +1,4 @@
-from pymodbus.client.sync import ModbusTcpClient as ModbusClient
+from pymodbus.client import ModbusTcpClient as ModbusClient
 from .exceptions import MaxCountException
 from .modbus import CustomModbus
 import logging
@@ -16,6 +16,7 @@ class Unit:
 
   def __del__(self):
     self.modbus.close()
+    del self.modbus
 
   def set_flag(self, number: int, value: bool):
     self.modbus.write_coil(address=8255 + number, value=value)
